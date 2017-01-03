@@ -94,6 +94,16 @@ class Rex_Product_Feed {
 	 */
 	private function load_dependencies() {
 
+    /**
+     * Get Composer Autoloader.
+     */
+    require_once plugin_dir_path( dirname( __FILE__ ) ) . 'vendor/autoload.php';
+
+    /**
+     * Get the CMB2 bootstrap, for creating Metaboxes.
+     */
+    require_once plugin_dir_path( dirname( __FILE__ ) ) . 'vendor/webdevstudios/cmb2/init.php';
+
 		/**
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
