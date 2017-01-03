@@ -1,0 +1,6 @@
+{
+    "require": {
+        "google/apiclient": "^2.0",
+        "webdevstudios/cmb2": "v2.2.3.1"
+    }
+}
