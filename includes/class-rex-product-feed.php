@@ -116,11 +116,6 @@ class Rex_Product_Feed {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-rex-product-feed-i18n.php';
 
-		/**
-		 * The class responsible for defining all actions that occur in the admin area.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-rex-product-feed-admin.php';
-
 		$this->loader = new Rex_Product_Feed_Loader();
 
 	}
@@ -154,7 +149,8 @@ class Rex_Product_Feed {
 		$plugin_admin = new Rex_Product_Feed_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+    $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+		$this->loader->add_action( 'cmb2_admin_init', $plugin_admin, 'register_metaboxes' );
 
 	}
 

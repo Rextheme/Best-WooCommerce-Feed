@@ -40,6 +40,16 @@ class Rex_Product_Feed_Admin {
 	 */
 	private $version;
 
+
+  /**
+   * Metabox instance of this plugin.
+   *
+   * @since    1.0.0
+   * @access   private
+   * @var      object    $metabox    The current metabox of this plugin.
+   */
+  private $metabox;
+
 	/**
 	 * Initialize the class and set its properties.
 	 *
@@ -50,7 +60,8 @@ class Rex_Product_Feed_Admin {
 	public function __construct( $plugin_name, $version ) {
 
 		$this->plugin_name = $plugin_name;
-		$this->version = $version;
+    $this->version = $version;
+		$this->metabox = new Rex_Product_Metabox;
 
 	}
 
@@ -77,27 +88,36 @@ class Rex_Product_Feed_Admin {
 
 	}
 
+  /**
+   * Register the JavaScript for the admin area.
+   *
+   * @since    1.0.0
+   */
+  public function enqueue_scripts() {
+
+    /**
+     * This function is provided for demonstration purposes only.
+     *
+     * An instance of this class should be passed to the run() function
+     * defined in Rex_Product_Feed_Loader as all of the hooks are defined
+     * in that particular class.
+     *
+     * The Rex_Product_Feed_Loader will then create the relationship
+     * between the defined hooks and the functions defined in this
+     * class.
+     */
+
+    wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/rex-product-feed-admin.js', array( 'jquery' ), $this->version, false );
+
+  }
+
 	/**
-	 * Register the JavaScript for the admin area.
+	 * Register All the Metaboxes for the admin area.
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_scripts() {
-
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Rex_Product_Feed_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Rex_Product_Feed_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/rex-product-feed-admin.js', array( 'jquery' ), $this->version, false );
-
+	public function register_metaboxes() {
+    $this->metabox->register();
 	}
 
 }

@@ -21,4 +21,22 @@
  */
 class Rex_Product_Metabox {
 
+  /**
+   * Register all metaboxes.
+   *
+   * @since    1.0.0
+   */
+  public function register() {
+    $this->google_metabox();
+  }
+
+  /**
+   * Metabox for Google Merchant.
+   *
+   * @since    1.0.0
+   */
+  private function google_metabox(){
+
+  }
+
 }
