@@ -48,6 +48,15 @@ class Rex_Product_Feed_Admin {
    * @access   private
    * @var      object    $metabox    The current metabox of this plugin.
    */
+  private $cpt;
+
+  /**
+   * Metabox instance of this plugin.
+   *
+   * @since    1.0.0
+   * @access   private
+   * @var      object    $metabox    The current metabox of this plugin.
+   */
   private $metabox;
 
 	/**
@@ -59,9 +68,10 @@ class Rex_Product_Feed_Admin {
 	 */
 	public function __construct( $plugin_name, $version ) {
 
-		$this->plugin_name = $plugin_name;
-    $this->version = $version;
-		$this->metabox = new Rex_Product_Metabox;
+    $this->plugin_name = $plugin_name;
+    $this->version     = $version;
+    $this->cpt         = new Rex_Product_CPT;
+    $this->metabox     = new Rex_Product_Metabox;
 
 	}
 
@@ -109,6 +119,15 @@ class Rex_Product_Feed_Admin {
 
     wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/rex-product-feed-admin.js', array( 'jquery' ), $this->version, false );
 
+  }
+
+  /**
+   * Register CPT for the Plugin
+   *
+   * @since    1.0.0
+   */
+  public function register_cpt() {
+    $this->cpt->register();
   }
 
 	/**

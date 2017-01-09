@@ -4705,6 +4705,7 @@ return array(
     'Psr\\Log\\NullLogger' => $vendorDir . '/psr/log/Psr/Log/NullLogger.php',
     'Psr\\Log\\Test\\DummyTest' => $vendorDir . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
     'Psr\\Log\\Test\\LoggerInterfaceTest' => $vendorDir . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
+    'Rex_Product_CPT' => $baseDir . '/admin/class-rex-product-feed-cpt.php',
     'Rex_Product_Feed_Admin' => $baseDir . '/admin/class-rex-product-feed-admin.php',
     'Rex_Product_Metabox' => $baseDir . '/admin/class-rex-product-feed-metabox.php',
     'phpseclib\\Crypt\\AES' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/AES.php',

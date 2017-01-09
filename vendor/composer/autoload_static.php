@@ -4819,6 +4819,7 @@ class ComposerStaticInit54b648127e56be9035c9d8426f792abf
         'Psr\\Log\\NullLogger' => __DIR__ . '/..' . '/psr/log/Psr/Log/NullLogger.php',
         'Psr\\Log\\Test\\DummyTest' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
         'Psr\\Log\\Test\\LoggerInterfaceTest' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
+        'Rex_Product_CPT' => __DIR__ . '/../..' . '/admin/class-rex-product-feed-cpt.php',
         'Rex_Product_Feed_Admin' => __DIR__ . '/../..' . '/admin/class-rex-product-feed-admin.php',
         'Rex_Product_Metabox' => __DIR__ . '/../..' . '/admin/class-rex-product-feed-metabox.php',
         'phpseclib\\Crypt\\AES' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/Crypt/AES.php',

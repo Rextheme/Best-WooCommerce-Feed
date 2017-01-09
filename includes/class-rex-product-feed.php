@@ -99,11 +99,6 @@ class Rex_Product_Feed {
      */
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'vendor/autoload.php';
 
-    /**
-     * Get the CMB2 bootstrap, for creating Metaboxes.
-     */
-    require_once plugin_dir_path( dirname( __FILE__ ) ) . 'vendor/webdevstudios/cmb2/init.php';
-
 		/**
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
@@ -150,6 +145,7 @@ class Rex_Product_Feed {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
     $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+    $this->loader->add_action( 'init', $plugin_admin, 'register_cpt' );
 		$this->loader->add_action( 'cmb2_admin_init', $plugin_admin, 'register_metaboxes' );
 
 	}
