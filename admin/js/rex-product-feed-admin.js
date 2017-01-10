@@ -29,4 +29,24 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 
+
+  $(document).on('click', '#publish', function(event) {
+
+    event.preventDefault();
+    console.log('clic');
+
+    wpAjaxHelperRequest( "my-handle", 'testPayload' )
+      .success( function( response ) {
+        console.log( "Woohoo!" );
+        // 'response' will be the response from the handle's callback function, as either a string or JSON.
+        console.log( response );
+      })
+      .error( function( response ) {
+        console.log( "Uh, oh!" );
+        console.log( response.statusText );
+      });
+
+  });
+
+
 })( jQuery );

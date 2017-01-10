@@ -146,8 +146,8 @@ class Rex_Product_Feed {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
     $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
     $this->loader->add_action( 'init', $plugin_admin, 'register_cpt' );
-		$this->loader->add_action( 'cmb2_admin_init', $plugin_admin, 'register_metaboxes' );
-
+    $this->loader->add_action( 'cmb2_admin_init', $plugin_admin, 'register_metaboxes' );
+		$this->loader->add_action( 'admin_init', 'Rex_Product_Feed_Ajax', 'init' );
 	}
 
 	/**
