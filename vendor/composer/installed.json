@@ -17,7 +17,7 @@
         "require": {
             "php": ">=5.3.0"
         },
-        "time": "2016-08-06 14:39:51",
+        "time": "2016-08-06T14:39:51+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -76,7 +76,7 @@
         "require-dev": {
             "phpunit/phpunit": "~4.0"
         },
-        "time": "2016-06-24 23:00:38",
+        "time": "2016-06-24T23:00:38+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -132,7 +132,7 @@
         "require-dev": {
             "phpunit/phpunit": "^4.0"
         },
-        "time": "2016-12-20 10:07:11",
+        "time": "2016-12-20T10:07:11+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -189,7 +189,7 @@
             "phpunit/phpunit": "^4.0",
             "psr/log": "^1.0"
         },
-        "time": "2016-10-08 15:01:37",
+        "time": "2016-10-08T15:01:37+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -258,7 +258,7 @@
             "ext-mcrypt": "Install the Mcrypt extension in order to speed up a few other cryptographic operations.",
             "ext-openssl": "Install the OpenSSL extension in order to speed up a wide variety of cryptographic operations."
         },
-        "time": "2016-10-04 00:57:04",
+        "time": "2016-10-04T00:57:04+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -340,7 +340,7 @@
         "require": {
             "php": ">=5.3.0"
         },
-        "time": "2016-10-10 12:19:37",
+        "time": "2016-10-10T12:19:37+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -419,7 +419,7 @@
             "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
             "sentry/sentry": "Allow sending log messages to a Sentry server"
         },
-        "time": "2016-11-26 00:15:39",
+        "time": "2016-11-26T00:15:39+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -469,7 +469,7 @@
         "require": {
             "php": ">=5.3.0"
         },
-        "time": "2016-07-18 04:51:16",
+        "time": "2016-07-18T04:51:16+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -514,7 +514,7 @@
         "require": {
             "php": ">=5.4"
         },
-        "time": "2016-10-18 01:01:16",
+        "time": "2016-10-18T01:01:16+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -550,7 +550,7 @@
         "require": {
             "php": ">=5.3.0"
         },
-        "time": "2016-08-06 20:24:11",
+        "time": "2016-08-06T20:24:11+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -607,7 +607,7 @@
             "friendsofphp/php-cs-fixer": "^1.11",
             "phpunit/phpunit": "3.7.*"
         },
-        "time": "2016-11-02 14:59:14",
+        "time": "2016-11-02T14:59:14+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -631,114 +631,6 @@
         ]
     },
     {
-        "name": "google/apiclient",
-        "version": "v2.1.0",
-        "version_normalized": "2.1.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/google/google-api-php-client.git",
-            "reference": "f4a8ef0642cdbea0a07f6966158337bab846d4de"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/google/google-api-php-client/zipball/f4a8ef0642cdbea0a07f6966158337bab846d4de",
-            "reference": "f4a8ef0642cdbea0a07f6966158337bab846d4de",
-            "shasum": ""
-        },
-        "require": {
-            "firebase/php-jwt": "~2.0|~3.0|~4.0",
-            "google/apiclient-services": "^0.8",
-            "google/auth": "^0.11",
-            "guzzlehttp/guzzle": "~5.2|~6.0",
-            "guzzlehttp/psr7": "^1.2",
-            "monolog/monolog": "^1.17",
-            "php": ">=5.4",
-            "phpseclib/phpseclib": "~2.0"
-        },
-        "require-dev": {
-            "cache/filesystem-adapter": "^0.3.2",
-            "phpunit/phpunit": "~4",
-            "squizlabs/php_codesniffer": "~2.3",
-            "symfony/css-selector": "~2.1",
-            "symfony/dom-crawler": "~2.1"
-        },
-        "suggest": {
-            "cache/filesystem-adapter": "For caching certs and tokens (using Google_Client::setCache)"
-        },
-        "time": "2016-11-02 14:28:02",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Google_": "src/"
-            },
-            "classmap": [
-                "src/Google/Service/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "Apache-2.0"
-        ],
-        "description": "Client library for Google APIs",
-        "homepage": "http://developers.google.com/api-client-library/php",
-        "keywords": [
-            "google"
-        ]
-    },
-    {
-        "name": "webdevstudios/cmb2",
-        "version": "v2.2.3.1",
-        "version_normalized": "2.2.3.1",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/WebDevStudios/CMB2.git",
-            "reference": "17677cf3aa65b0402ca8084b6b1cf37df6260582"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/WebDevStudios/CMB2/zipball/17677cf3aa65b0402ca8084b6b1cf37df6260582",
-            "reference": "17677cf3aa65b0402ca8084b6b1cf37df6260582",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">5.2.4"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "3.7.*"
-        },
-        "suggest": {
-            "composer/installers": "~1.0"
-        },
-        "time": "2016-11-08 15:24:55",
-        "type": "wordpress-plugin",
-        "installation-source": "dist",
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "GPL-2.0+"
-        ],
-        "authors": [
-            {
-                "name": "WebDevStudios",
-                "email": "contact@webdevstudios.com",
-                "homepage": "https://github.com/WebDevStudios",
-                "role": "Developer"
-            }
-        ],
-        "description": "CMB2 is a metabox, custom fields, and forms library for WordPress that will blow your mind.",
-        "homepage": "https://github.com/WebDevStudios/CMB2",
-        "keywords": [
-            "metabox",
-            "plugin",
-            "wordpress"
-        ]
-    },
-    {
         "name": "gregwar/cache",
         "version": "v1.0.12",
         "version_normalized": "1.0.12.0",
@@ -757,7 +649,7 @@
         "require": {
             "php": ">=5.3"
         },
-        "time": "2016-09-23 08:16:04",
+        "time": "2016-09-23T08:16:04+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -802,7 +694,7 @@
             "gregwar/cache": "1.0.*",
             "php": ">=5.3.0"
         },
-        "time": "2016-11-21 15:51:31",
+        "time": "2016-11-21T15:51:31+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -856,7 +748,7 @@
             "composer/composer": "1.0.*@dev",
             "phpunit/phpunit": "4.1.*"
         },
-        "time": "2016-08-13 20:53:52",
+        "time": "2016-08-13T20:53:52+00:00",
         "type": "composer-plugin",
         "extra": {
             "class": "Composer\\Installers\\Plugin",
@@ -967,7 +859,7 @@
             "johnbillion/extended-taxos": "Extended Taxonomies",
             "wpackagist-plugin/rewrite-testing": "Rewrite Rule Testing"
         },
-        "time": "2016-07-26 10:34:52",
+        "time": "2016-07-26T10:34:52+00:00",
         "type": "library",
         "installation-source": "dist",
         "notification-url": "https://packagist.org/downloads/",
@@ -982,5 +874,113 @@
         ],
         "description": "A library which provides extended functionality to WordPress custom post types, allowing developers to quickly build custom post types without having to write the same code again and again.",
         "homepage": "https://github.com/johnbillion/extended-cpts/"
+    },
+    {
+        "name": "webdevstudios/cmb2",
+        "version": "v2.2.3.1",
+        "version_normalized": "2.2.3.1",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/WebDevStudios/CMB2.git",
+            "reference": "17677cf3aa65b0402ca8084b6b1cf37df6260582"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/WebDevStudios/CMB2/zipball/17677cf3aa65b0402ca8084b6b1cf37df6260582",
+            "reference": "17677cf3aa65b0402ca8084b6b1cf37df6260582",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">5.2.4"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "3.7.*"
+        },
+        "suggest": {
+            "composer/installers": "~1.0"
+        },
+        "time": "2016-11-08T15:24:55+00:00",
+        "type": "wordpress-plugin",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "WebDevStudios",
+                "email": "contact@webdevstudios.com",
+                "homepage": "https://github.com/WebDevStudios",
+                "role": "Developer"
+            }
+        ],
+        "description": "CMB2 is a metabox, custom fields, and forms library for WordPress that will blow your mind.",
+        "homepage": "https://github.com/WebDevStudios/CMB2",
+        "keywords": [
+            "metabox",
+            "plugin",
+            "wordpress"
+        ]
+    },
+    {
+        "name": "google/apiclient",
+        "version": "v2.1.1",
+        "version_normalized": "2.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/google/google-api-php-client.git",
+            "reference": "e39fe36586407600b0c79623ae4817412a8ccc7e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/google/google-api-php-client/zipball/e39fe36586407600b0c79623ae4817412a8ccc7e",
+            "reference": "e39fe36586407600b0c79623ae4817412a8ccc7e",
+            "shasum": ""
+        },
+        "require": {
+            "firebase/php-jwt": "~2.0|~3.0|~4.0",
+            "google/apiclient-services": "^0.8",
+            "google/auth": "^0.11",
+            "guzzlehttp/guzzle": "~5.2|~6.0",
+            "guzzlehttp/psr7": "^1.2",
+            "monolog/monolog": "^1.17",
+            "php": ">=5.4",
+            "phpseclib/phpseclib": "~0.3.10|~2.0"
+        },
+        "require-dev": {
+            "cache/filesystem-adapter": "^0.3.2",
+            "phpunit/phpunit": "~4",
+            "squizlabs/php_codesniffer": "~2.3",
+            "symfony/css-selector": "~2.1",
+            "symfony/dom-crawler": "~2.1"
+        },
+        "suggest": {
+            "cache/filesystem-adapter": "For caching certs and tokens (using Google_Client::setCache)"
+        },
+        "time": "2017-01-09T23:08:43+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Google_": "src/"
+            },
+            "classmap": [
+                "src/Google/Service/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "description": "Client library for Google APIs",
+        "homepage": "http://developers.google.com/api-client-library/php",
+        "keywords": [
+            "google"
+        ]
     }
 ]

@@ -4,7 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "32b592102398b01254ffbd8f6bf34f2b",
     "content-hash": "e3da4d049d45c2480de216160de35b6b",
     "packages": [
         {
@@ -112,7 +111,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2016-08-13 20:53:52"
+            "time": "2016-08-13T20:53:52+00:00"
         },
         {
             "name": "firebase/php-jwt",
@@ -155,20 +154,20 @@
             ],
             "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
             "homepage": "https://github.com/firebase/php-jwt",
-            "time": "2016-07-18 04:51:16"
+            "time": "2016-07-18T04:51:16+00:00"
         },
         {
             "name": "google/apiclient",
-            "version": "v2.1.0",
+            "version": "v2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/google/google-api-php-client.git",
-                "reference": "f4a8ef0642cdbea0a07f6966158337bab846d4de"
+                "reference": "e39fe36586407600b0c79623ae4817412a8ccc7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/google-api-php-client/zipball/f4a8ef0642cdbea0a07f6966158337bab846d4de",
-                "reference": "f4a8ef0642cdbea0a07f6966158337bab846d4de",
+                "url": "https://api.github.com/repos/google/google-api-php-client/zipball/e39fe36586407600b0c79623ae4817412a8ccc7e",
+                "reference": "e39fe36586407600b0c79623ae4817412a8ccc7e",
                 "shasum": ""
             },
             "require": {
@@ -179,7 +178,7 @@
                 "guzzlehttp/psr7": "^1.2",
                 "monolog/monolog": "^1.17",
                 "php": ">=5.4",
-                "phpseclib/phpseclib": "~2.0"
+                "phpseclib/phpseclib": "~0.3.10|~2.0"
             },
             "require-dev": {
                 "cache/filesystem-adapter": "^0.3.2",
@@ -214,7 +213,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2016-11-02 14:28:02"
+            "time": "2017-01-09T23:08:43+00:00"
         },
         {
             "name": "google/apiclient-services",
@@ -248,7 +247,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2016-10-18 01:01:16"
+            "time": "2016-10-18T01:01:16+00:00"
         },
         {
             "name": "google/auth",
@@ -296,7 +295,7 @@
                 "google",
                 "oauth2"
             ],
-            "time": "2016-11-02 14:59:14"
+            "time": "2016-11-02T14:59:14+00:00"
         },
         {
             "name": "gregwar/cache",
@@ -339,7 +338,7 @@
                 "file-system",
                 "system"
             ],
-            "time": "2016-09-23 08:16:04"
+            "time": "2016-09-23T08:16:04+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -401,7 +400,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2016-10-08 15:01:37"
+            "time": "2016-10-08T15:01:37+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -452,7 +451,7 @@
             "keywords": [
                 "promise"
             ],
-            "time": "2016-12-20 10:07:11"
+            "time": "2016-12-20T10:07:11+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -510,7 +509,7 @@
                 "stream",
                 "uri"
             ],
-            "time": "2016-06-24 23:00:38"
+            "time": "2016-06-24T23:00:38+00:00"
         },
         {
             "name": "johnbillion/extended-cpts",
@@ -552,7 +551,7 @@
             ],
             "description": "A library which provides extended functionality to WordPress custom post types, allowing developers to quickly build custom post types without having to write the same code again and again.",
             "homepage": "https://github.com/johnbillion/extended-cpts/",
-            "time": "2016-07-26 10:34:52"
+            "time": "2016-07-26T10:34:52+00:00"
         },
         {
             "name": "lukesnowden/google-shopping-feed",
@@ -597,7 +596,7 @@
                 "google",
                 "shopping"
             ],
-            "time": "2016-11-21 15:51:31"
+            "time": "2016-11-21T15:51:31+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -675,7 +674,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-11-26 00:15:39"
+            "time": "2016-11-26T00:15:39+00:00"
         },
         {
             "name": "phpseclib/phpseclib",
@@ -767,7 +766,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2016-10-04 00:57:04"
+            "time": "2016-10-04T00:57:04+00:00"
         },
         {
             "name": "psr/cache",
@@ -813,7 +812,7 @@
                 "psr",
                 "psr-6"
             ],
-            "time": "2016-08-06 20:24:11"
+            "time": "2016-08-06T20:24:11+00:00"
         },
         {
             "name": "psr/http-message",
@@ -863,7 +862,7 @@
                 "request",
                 "response"
             ],
-            "time": "2016-08-06 14:39:51"
+            "time": "2016-08-06T14:39:51+00:00"
         },
         {
             "name": "psr/log",
@@ -910,7 +909,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10 12:19:37"
+            "time": "2016-10-10T12:19:37+00:00"
         },
         {
             "name": "webdevstudios/cmb2",
@@ -955,7 +954,7 @@
                 "plugin",
                 "wordpress"
             ],
-            "time": "2016-11-08 15:24:55"
+            "time": "2016-11-08T15:24:55+00:00"
         }
     ],
     "packages-dev": [],

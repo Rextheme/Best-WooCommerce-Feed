@@ -9,7 +9,8 @@
         "classmap": ["admin/"],
         "files": [
             "vendor/johnbillion/extended-cpts/extended-cpts.php",
-            "vendor/webdevstudios/cmb2/init.php"
+            "vendor/webdevstudios/cmb2/init.php",
+            "vendor/cmb2-conditionals/cmb2-conditionals.php"
         ]
     }
 }
