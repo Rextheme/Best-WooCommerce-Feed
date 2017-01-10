@@ -876,53 +876,6 @@
         "homepage": "https://github.com/johnbillion/extended-cpts/"
     },
     {
-        "name": "webdevstudios/cmb2",
-        "version": "v2.2.3.1",
-        "version_normalized": "2.2.3.1",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/WebDevStudios/CMB2.git",
-            "reference": "17677cf3aa65b0402ca8084b6b1cf37df6260582"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/WebDevStudios/CMB2/zipball/17677cf3aa65b0402ca8084b6b1cf37df6260582",
-            "reference": "17677cf3aa65b0402ca8084b6b1cf37df6260582",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">5.2.4"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "3.7.*"
-        },
-        "suggest": {
-            "composer/installers": "~1.0"
-        },
-        "time": "2016-11-08T15:24:55+00:00",
-        "type": "wordpress-plugin",
-        "installation-source": "dist",
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "GPL-2.0+"
-        ],
-        "authors": [
-            {
-                "name": "WebDevStudios",
-                "email": "contact@webdevstudios.com",
-                "homepage": "https://github.com/WebDevStudios",
-                "role": "Developer"
-            }
-        ],
-        "description": "CMB2 is a metabox, custom fields, and forms library for WordPress that will blow your mind.",
-        "homepage": "https://github.com/WebDevStudios/CMB2",
-        "keywords": [
-            "metabox",
-            "plugin",
-            "wordpress"
-        ]
-    },
-    {
         "name": "google/apiclient",
         "version": "v2.1.1",
         "version_normalized": "2.1.1.0",
@@ -981,6 +934,101 @@
         "homepage": "http://developers.google.com/api-client-library/php",
         "keywords": [
             "google"
+        ]
+    },
+    {
+        "name": "philipnewcomer/wp-ajax-helper",
+        "version": "1.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/philipnewcomer/wp-ajax-helper.git",
+            "reference": "e2b6bf06cd102346cc452b102a2486b18516c271"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/philipnewcomer/wp-ajax-helper/zipball/e2b6bf06cd102346cc452b102a2486b18516c271",
+            "reference": "e2b6bf06cd102346cc452b102a2486b18516c271",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3"
+        },
+        "time": "2016-01-01T13:50:50+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "PhilipNewcomer\\WP_Ajax_Helper\\": "src/components"
+            },
+            "files": [
+                "src/functions.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "Philip Newcomer",
+                "email": "contact@philipnewcomer.net",
+                "homepage": "http://philipnewcomer.net",
+                "role": "Developer"
+            }
+        ],
+        "description": "A library to simplify AJAX requests in WordPress plugins and themes.",
+        "homepage": "https://github.com/philipnewcomer/wp-ajax-helper",
+        "keywords": [
+            "ajax",
+            "wordpress"
+        ]
+    },
+    {
+        "name": "webdevstudios/cmb2",
+        "version": "v2.2.3.1",
+        "version_normalized": "2.2.3.1",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/WebDevStudios/CMB2.git",
+            "reference": "17677cf3aa65b0402ca8084b6b1cf37df6260582"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/WebDevStudios/CMB2/zipball/17677cf3aa65b0402ca8084b6b1cf37df6260582",
+            "reference": "17677cf3aa65b0402ca8084b6b1cf37df6260582",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">5.2.4"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "3.7.*"
+        },
+        "suggest": {
+            "composer/installers": "~1.0"
+        },
+        "time": "2016-11-08T15:24:55+00:00",
+        "type": "wordpress-plugin",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "WebDevStudios",
+                "email": "contact@webdevstudios.com",
+                "homepage": "https://github.com/WebDevStudios",
+                "role": "Developer"
+            }
+        ],
+        "description": "CMB2 is a metabox, custom fields, and forms library for WordPress that will blow your mind.",
+        "homepage": "https://github.com/WebDevStudios/CMB2",
+        "keywords": [
+            "metabox",
+            "plugin",
+            "wordpress"
         ]
     }
 ]

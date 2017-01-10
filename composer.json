@@ -3,7 +3,8 @@
         "google/apiclient": "^2.0",
         "webdevstudios/cmb2": "v2.2.3.1",
         "lukesnowden/google-shopping-feed": "^2.0",
-        "johnbillion/extended-cpts": "^3.0"
+        "johnbillion/extended-cpts": "^3.0",
+        "philipnewcomer/wp-ajax-helper": "^1.0"
     },
     "autoload": {
         "classmap": ["admin/"],

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e3da4d049d45c2480de216160de35b6b",
+    "content-hash": "0d2fdc9545da90a19b8ece676f91a5fe",
     "packages": [
         {
             "name": "composer/installers",
@@ -675,6 +675,52 @@
                 "psr-3"
             ],
             "time": "2016-11-26T00:15:39+00:00"
+        },
+        {
+            "name": "philipnewcomer/wp-ajax-helper",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/philipnewcomer/wp-ajax-helper.git",
+                "reference": "e2b6bf06cd102346cc452b102a2486b18516c271"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/philipnewcomer/wp-ajax-helper/zipball/e2b6bf06cd102346cc452b102a2486b18516c271",
+                "reference": "e2b6bf06cd102346cc452b102a2486b18516c271",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhilipNewcomer\\WP_Ajax_Helper\\": "src/components"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Philip Newcomer",
+                    "email": "contact@philipnewcomer.net",
+                    "homepage": "http://philipnewcomer.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A library to simplify AJAX requests in WordPress plugins and themes.",
+            "homepage": "https://github.com/philipnewcomer/wp-ajax-helper",
+            "keywords": [
+                "ajax",
+                "wordpress"
+            ],
+            "time": "2016-01-01T13:50:50+00:00"
         },
         {
             "name": "phpseclib/phpseclib",
