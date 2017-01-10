@@ -30,22 +30,20 @@ class Rex_Product_Metabox {
    */
   public function register() {
     $this->products();
+    $this->feed_config();
   }
 
   /**
-   * Metabox for Google Merchant.
+   * Products Selection Metabox
    *
    * @since    1.0.0
    */
   private function products(){
 
-    /**
-     * Products Selection Metabox
-     */
     $box = new_cmb2_box( array(
-      'id'            => $this->prefix . 'metabox',
+      'id'            => $this->prefix . 'products',
       'title'         => esc_html__( 'Products', 'rex-product-feed' ),
-      'object_types'  => array( 'product-feed', ), // Post type
+      'object_types'  => array( 'product-feed' ), // Post type
     ) );
 
     $box->add_field( array(
@@ -56,7 +54,7 @@ class Rex_Product_Metabox {
       'show_option_none' => false,
       'default'          => 'all',
       'options'          => array(
-        'all'    => __( 'All Products', 'rex-product-feed' ),
+        'all'    => __( 'All Published Products', 'rex-product-feed' ),
         'cats'   => __( 'Map Category', 'rex-product-feed' ),
         'tags'   => __( 'Map Tag', 'rex-product-feed' ),
         'custom' => __( 'Custom', 'rex-product-feed' ),
@@ -92,6 +90,33 @@ class Rex_Product_Metabox {
         'required'               => true, // Will be required only if visible.
         'data-conditional-id'    => $this->prefix . 'products',
         'data-conditional-value' => 'tags',
+      ),
+    ) );
+
+  }
+
+  /**
+   * Defines Metaboxes for Feed Configuration
+   *
+   * @return void
+   * @author Khorshed Alam
+   **/
+  private function feed_config(){
+    $box = new_cmb2_box( array(
+      'id'            => $this->prefix . 'conf',
+      'title'         => esc_html__( 'Feed Configuration', 'rex-product-feed' ),
+      'object_types'  => array( 'product-feed' ), // Post type
+    ) );
+
+    $box->add_field( array(
+      'name'             => __('Merchant Type', 'rex-product-feed' ),
+      'desc'             => __('Select Merchant Type of the Feed.', 'rex-product-feed' ),
+      'id'               => $this->prefix . 'merchant',
+      'type'             => 'select',
+      'show_option_none' => false,
+      'default'          => 'all',
+      'options'          => array(
+        'google'    => __( 'Google Shopping', 'rex-product-feed' ),
       ),
     ) );
 
