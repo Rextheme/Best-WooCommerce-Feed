@@ -15,5 +15,14 @@
 
 class Rex_Product_Feed_Google extends Rex_Product_Feed_Abstract_Generator {
 
+  /**
+   * Create Feed for Google
+   *
+   * @return void
+   * @author
+   **/
+  protected function make_feed() {
+
+  }
 
 }

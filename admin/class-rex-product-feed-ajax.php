@@ -38,13 +38,15 @@ class Rex_Product_Feed_Ajax {
       ->with_validation( $validations );
   }
 
-  public function generate_feed( $payload ){
+  public static function generate_feed( $payload ){
 
     try {
       $merchant = Rex_Product_Feed_Factory::build('google');
     } catch (Exception $e) {
       return $e->getMessage();
     }
+
+    return 'ajax-response from server';
 
   }
 
