@@ -132,15 +132,17 @@ class Rex_Product_Metabox {
   private function feed_file(){
     $box = new_cmb2_box( array(
       'id'            => $this->prefix . 'file',
-      'title'         => esc_html__( 'Feed', 'rex-product-feed' ),
+      'title'         => esc_html__( 'XML Feed', 'rex-product-feed' ),
       'object_types'  => array( 'product-feed' ), // Post type
+      'context'       => 'side',
     ) );
 
     $box->add_field( array(
-      'name'             => __('Feed File', 'rex-product-feed' ),
+      'name'             => __('', 'rex-product-feed' ),
       'desc'             => __('Your XML Feed Location', 'rex-product-feed' ),
       'id'               => $this->prefix . 'xml_file',
-      'type'             => 'text_url',
+      'type'             => 'text',
+      'sanitization_cb'  => array($this, 'sanitize_xml_file'),
       'default'          => '',
       'attributes'  => array(
         'readonly' => 'readonly',
@@ -148,6 +150,18 @@ class Rex_Product_Metabox {
       ),
     ) );
 
+  }
+
+  /**
+   * Update the XML File URL on Sanitization Hook.
+   *
+   * @return string
+   * @author Khorshed Alam
+   **/
+  public function sanitize_xml_file($value, $field_args, $field){
+    $path  = wp_upload_dir();
+    $path  = $path['baseurl'] . '/rex-feed' . "/feed-{$field->object_id}.xml";
+    return esc_url( $path );
   }
 
 }
