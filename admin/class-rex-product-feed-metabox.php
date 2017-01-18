@@ -31,6 +31,7 @@ class Rex_Product_Metabox {
   public function register() {
     $this->products();
     $this->feed_config();
+    $this->feed_file();
   }
 
   /**
@@ -117,6 +118,33 @@ class Rex_Product_Metabox {
       'default'          => 'all',
       'options'          => array(
         'google'    => __( 'Google Shopping', 'rex-product-feed' ),
+      ),
+    ) );
+
+  }
+
+  /**
+   * Defines Metaboxes for Feed
+   *
+   * @return void
+   * @author Khorshed Alam
+   **/
+  private function feed_file(){
+    $box = new_cmb2_box( array(
+      'id'            => $this->prefix . 'file',
+      'title'         => esc_html__( 'Feed', 'rex-product-feed' ),
+      'object_types'  => array( 'product-feed' ), // Post type
+    ) );
+
+    $box->add_field( array(
+      'name'             => __('Feed File', 'rex-product-feed' ),
+      'desc'             => __('Your XML Feed Location', 'rex-product-feed' ),
+      'id'               => $this->prefix . 'xml_file',
+      'type'             => 'text_url',
+      'default'          => '',
+      'attributes'  => array(
+        'readonly' => 'readonly',
+        'disabled' => 'disabled',
       ),
     ) );
 
