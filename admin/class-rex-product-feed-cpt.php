@@ -41,7 +41,24 @@ class Rex_Product_CPT {
       'query_var'          => false,
       'publicly_queryable' => false,
       'supports'           => array( 'title' ),
-      'enter_title_here'   => 'Enter feed title here'
+      'enter_title_here'   => 'Enter feed title here',
+      'admin_cols' => array(
+
+        'merchant' => array(
+          'title'       => 'Merchant',
+          'meta_key'    => 'rex_feed_merchant',
+          'function'    => function ($a){
+            echo ucwords( esc_html( get_post_meta( get_the_id(), 'rex_feed_merchant', true ) ) );
+          }
+        ),
+
+        'xml_feed' => array(
+          'title'       => 'XML Feed',
+          'meta_key'    => 'rex_feed_xml_file',
+        ),
+
+        'date'
+      ),
     ));
   }
 
