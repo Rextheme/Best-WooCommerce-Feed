@@ -21,33 +21,32 @@
  */
 class Rex_Product_Feed_Ajax {
 
-  /**
-   * Hook in ajax handlers.
-   *
-   * @since    1.0.0
-   */
-  public static function init() {
+	/**
+	 * Hook in ajax handlers.
+	 *
+	 * @since    1.0.0
+	 */
+	public static function init() {
 
-    $validations = array(
-      'logged_in' => true,
-      'user_can'  => 'manage_options',
-    );
+		$validations = array(
+			'logged_in' => true,
+			'user_can'  => 'manage_options',
+		);
 
-    wp_ajax_helper()->handle( 'my-handle' )
-      ->with_callback( array( 'Rex_Product_Feed_Ajax', 'generate_feed' ) )
-      ->with_validation( $validations );
-  }
+		wp_ajax_helper()->handle( 'my-handle' )
+		                ->with_callback( array( 'Rex_Product_Feed_Ajax', 'generate_feed' ) )
+		                ->with_validation( $validations );
+	}
 
-  public static function generate_feed( $payload ){
+	public static function generate_feed( $config ){
 
-    try {
-      $merchant = Rex_Product_Feed_Factory::build('google');
-    } catch (Exception $e) {
-      return $e->getMessage();
-    }
+		try {
+			$merchant = Rex_Product_Feed_Factory::build( $config );
+		} catch (Exception $e) {
+			return $e->getMessage();
+		}
 
-    return 'ajax-response from server';
-
-  }
+		return $merchant->make_feed();
+	}
 
 }
