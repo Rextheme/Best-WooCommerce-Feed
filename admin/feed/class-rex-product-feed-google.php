@@ -13,16 +13,41 @@
  * @author     RexTheme <info@rextheme.com>
  */
 
+use LukeSnowden\GoogleShoppingFeed\Containers\GoogleShopping;
+
 class Rex_Product_Feed_Google extends Rex_Product_Feed_Abstract_Generator {
 
-  /**
-   * Create Feed for Google
-   *
-   * @return void
-   * @author
-   **/
-  protected function make_feed() {
+	/**
+	 * Create Feed for Google
+	 *
+	 * @return boolean
+	 * @author
+	 **/
+	public function make_feed() {
 
-  }
+		GoogleShopping::title($this->title);
+		GoogleShopping::link($this->link);
+		GoogleShopping::description($this->desc);
+
+		foreach( $this->products as $product ) {
+
+			$data = $this->get_product_data( $product->ID );
+
+			$item = GoogleShopping::createItem();
+			$item->id($data['id']);
+			$item->title($data['title']);
+			$item->description($data['desc']);
+			$item->price($data['price']);
+			// $item->mpn($data['SKU']);
+			// $item->sale_price($data['salePrice']);
+			$item->link($data['link']);
+			$item->image_link($data['image']);
+
+		}
+
+		$this->feed = GoogleShopping::asRss();
+		return $this->save_feed();
+
+	}
 
 }

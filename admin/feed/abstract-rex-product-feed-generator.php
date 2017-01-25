@@ -27,6 +27,33 @@ abstract class Rex_Product_Feed_Abstract_Generator {
 	protected $id;
 
 	/**
+	 * Feed Title.
+	 *
+	 * @since    1.0.0
+	 * @access   protected
+	 * @var      Rex_Product_Feed_Abstract_Generator    title    Feed title
+	 */
+	protected $title;
+
+	/**
+	 * Feed Description.
+	 *
+	 * @since    1.0.0
+	 * @access   protected
+	 * @var      Rex_Product_Feed_Abstract_Generator    desc    Feed description.
+	 */
+	protected $desc;
+
+	/**
+	 * Feed Link.
+	 *
+	 * @since    1.0.0
+	 * @access   protected
+	 * @var      Rex_Product_Feed_Abstract_Generator    link    Feed link.
+	 */
+	protected $link;
+
+	/**
 	 * The Product Query args to retrieve specific products for making the Feed.
 	 *
 	 * @since    1.0.0
@@ -45,26 +72,32 @@ abstract class Rex_Product_Feed_Abstract_Generator {
 	protected $products;
 
 	/**
+	 * The Feed.
+	 * @since    1.0.0
+	 * @access   protected
+	 * @var Rex_Product_Feed_Abstract_Generator    $feed    Feed as text.
+	 */
+	protected $feed;
+
+	/**
 	 * Define the core functionality of the plugin.
 	 *
 	 * Set the plugin name and the plugin version that can be used throughout the plugin.
 	 * Load the dependencies, define the locale, and set the hooks for the admin area and
 	 * the public-facing side of the site.
-	 *
+	 * @param $config
 	 * @since    1.0.0
 	 */
 	public function __construct( $config ) {
-
-		$this->id = $config['post_id'];
 		$this->prepare_products_args( $config['products'] );
-		$this->get_products();
-
+		$this->setup_feed_data( $config['info'] );
+		$this->setup_products();
 	}
 
 	/**
 	 * Prepare the Products Query args for retrieving  products.
-	 *
-	 **/
+	 * @param $args
+	 */
 	protected function prepare_products_args( $args ) {
 
 		$this->products_args = array(
@@ -83,12 +116,22 @@ abstract class Rex_Product_Feed_Abstract_Generator {
 		}
 	}
 
+	/**
+	 * Setup the Feed Related info
+	 * @param $info
+	 */
+	protected function setup_feed_data( $info ){
+		$this->id    = $info['post_id'];
+		$this->title = $info['title'];
+		$this->desc  = $info['desc'];
+		$this->link  = esc_url( home_url('/') );
+	}
+
 
 	/**
-	 * Get the products to generate feed.
-	 *
-	 **/
-	protected function get_products() {
+	 * Get the products to generate feed
+	 */
+	protected function setup_products() {
 
 		$this->products = get_posts( $this->products_args );
 
@@ -97,9 +140,10 @@ abstract class Rex_Product_Feed_Abstract_Generator {
 
 	/**
 	 * Get Product data.
+	 * @param bool $id
 	 *
 	 * @return array
-	 **/
+	 */
 	protected function get_product_data( $id = false ){
 		$product = new WC_Product($id);
 
@@ -118,9 +162,9 @@ abstract class Rex_Product_Feed_Abstract_Generator {
 	/**
 	 * Save the feed as XML file.
 	 *
-	 * @return boolean
-	 **/
-	protected function save_feed( $feed ){
+	 * @return bool
+	 */
+	protected function save_feed(){
 		$path  = wp_upload_dir();
 		$path  = $path['basedir'] . '/rex-feed';
 
@@ -131,7 +175,7 @@ abstract class Rex_Product_Feed_Abstract_Generator {
 
 		$file = trailingslashit($path) . "feed-{$this->id}.xml";
 
-		return (bool) file_put_contents($file, $feed);
+		return (bool) file_put_contents($file, $this->feed);
 	}
 
 	/**
