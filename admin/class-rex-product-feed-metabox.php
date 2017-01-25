@@ -72,7 +72,6 @@ class Rex_Product_Metabox {
         'no_terms_text' => 'Sorry, no product categories could be found.'
       ),
       'attributes' => array(
-        'required'               => true, // Will be required only if visible.
         'data-conditional-id'    => $this->prefix . 'products',
         'data-conditional-value' => 'product_cat',
       ),
@@ -88,7 +87,6 @@ class Rex_Product_Metabox {
         'no_terms_text' => 'Sorry, no product tags could be found.'
       ),
       'attributes' => array(
-        'required'               => true, // Will be required only if visible.
         'data-conditional-id'    => $this->prefix . 'products',
         'data-conditional-value' => 'product_tag',
       ),
