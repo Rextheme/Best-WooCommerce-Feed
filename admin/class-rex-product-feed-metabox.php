@@ -56,8 +56,8 @@ class Rex_Product_Metabox {
       'default'          => 'all',
       'options'          => array(
         'all'    => __( 'All Published Products', 'rex-product-feed' ),
-        'cats'   => __( 'Map Category', 'rex-product-feed' ),
-        'tags'   => __( 'Map Tag', 'rex-product-feed' ),
+        'product_cat'   => __( 'Map Category', 'rex-product-feed' ),
+        'product_tag'   => __( 'Map Tag', 'rex-product-feed' ),
         'custom' => __( 'Custom', 'rex-product-feed' ),
       ),
     ) );
@@ -65,7 +65,7 @@ class Rex_Product_Metabox {
     $box->add_field( array(
       'name'           => 'Product Category',
       'desc'           => 'Description Goes Here',
-      'id'             => 'wiki_test_taxonomy_multicheck',
+      'id'             => $this->prefix . 'cats',
       'taxonomy'       => 'product_cat', //Enter Taxonomy Slug
       'type'           => 'taxonomy_multicheck',
       'text'           => array(
@@ -74,14 +74,14 @@ class Rex_Product_Metabox {
       'attributes' => array(
         'required'               => true, // Will be required only if visible.
         'data-conditional-id'    => $this->prefix . 'products',
-        'data-conditional-value' => 'cats',
+        'data-conditional-value' => 'product_cat',
       ),
     ) );
 
     $box->add_field( array(
       'name'           => 'Product Tag',
       'desc'           => 'Description Goes Here',
-      'id'             => 'tag',
+      'id'             => $this->prefix . 'tags',
       'taxonomy'       => 'product_tag', //Enter Taxonomy Slug
       'type'           => 'taxonomy_multicheck',
       'text'           => array(
@@ -90,7 +90,7 @@ class Rex_Product_Metabox {
       'attributes' => array(
         'required'               => true, // Will be required only if visible.
         'data-conditional-id'    => $this->prefix . 'products',
-        'data-conditional-value' => 'tags',
+        'data-conditional-value' => 'product_tag',
       ),
     ) );
 
