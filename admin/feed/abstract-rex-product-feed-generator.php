@@ -105,7 +105,9 @@ abstract class Rex_Product_Feed_Abstract_Generator {
 			'posts_per_page' => -1,
 		);
 
-		if ( $args['products_scope'] !== 'all') {
+		if ( $args['products_scope'] === 'custom'){
+			$this->products_args['post__in'] = $args['items'];
+		}elseif ( $args['products_scope'] !== 'all') {
 			$terms = $args['products_scope'] === 'product_tag' ? 'tags' : 'cats';
 
 			$this->products_args['tax_query'][] = array(
@@ -175,7 +177,7 @@ abstract class Rex_Product_Feed_Abstract_Generator {
 
 		$file = trailingslashit($path) . "feed-{$this->id}.xml";
 
-		return (bool) file_put_contents($file, $this->feed);
+		return file_put_contents($file, $this->feed) ? 'true' : 'false';
 	}
 
 	/**
