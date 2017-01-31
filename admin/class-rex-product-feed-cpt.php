@@ -21,45 +21,54 @@
  */
 class Rex_Product_CPT {
 
-  /**
-   * Register all metaboxes.
-   *
-   * @since    1.0.0
-   */
-  public function register() {
-    $this->post_types();
-  }
+    /**
+     * Register all metaboxes.
+     *
+     * @since    1.0.0
+     */
+    public function register() {
+        $this->post_types();
+    }
 
-  /**
-   * Metabox for Google Merchant.
-   *
-   * @since    1.0.0
-   */
-  private function post_types(){
-    register_extended_post_type( 'product-feed', array(
-      'rewrite'            => false,
-      'query_var'          => false,
-      'publicly_queryable' => false,
-      'supports'           => array( 'title' ),
-      'enter_title_here'   => 'Enter feed title here',
-      'admin_cols' => array(
+    /**
+     * Metabox for Google Merchant.
+     *
+     * @since    1.0.0
+     */
+    private function post_types(){
+        register_extended_post_type( 'product-feed', array(
+            'rewrite'            => false,
+            'query_var'          => false,
+            'publicly_queryable' => false,
+            'supports'           => array( 'title' ),
+            'enter_title_here'   => 'Enter feed title here',
+            'admin_cols' => array(
 
-        'merchant' => array(
-          'title'       => 'Merchant',
-          'meta_key'    => 'rex_feed_merchant',
-          'function'    => function ($a){
-            echo ucwords( esc_html( get_post_meta( get_the_id(), 'rex_feed_merchant', true ) ) );
-          }
-        ),
+                'merchant' => array(
+                    'title'       => 'Merchant',
+                    'meta_key'    => 'rex_feed_merchant',
+                    'function'    => function (){
+                        echo ucwords( esc_html( get_post_meta( get_the_id(), 'rex_feed_merchant', true ) ) );
+                    }
+                ),
 
-        'xml_feed' => array(
-          'title'       => 'XML Feed',
-          'meta_key'    => 'rex_feed_xml_file',
-        ),
+                'xml_feed' => array(
+                    'title'       => 'Feed URL',
+                    'meta_key'    => 'rex_feed_xml_file',
+                ),
 
-        'date'
-      ),
-    ));
-  }
+                'view_feed' => array(
+                    'title'       => 'View/Download',
+                    'function'    => function (){
+                        $url = esc_url( get_post_meta( get_the_id(), 'rex_feed_xml_file', true ) );
+                        echo '<a target="_blank" class="button" href="' . $url . '">View</a> ';
+                        echo '<a target="_blank" class="button" href="' . $url . '" download>Download</a>';
+                    }
+                ),
+
+                'date'
+            ),
+        ));
+    }
 
 }
