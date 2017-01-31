@@ -38,8 +38,9 @@ class Rex_Product_Feed_Google extends Rex_Product_Feed_Abstract_Generator {
 			$item->title($data['title']);
 			$item->description($data['desc']);
 			$item->price($data['price']);
-			// $item->mpn($data['SKU']);
-			// $item->sale_price($data['salePrice']);
+			$item->availability($data['availability']);
+			$item->condition('new');
+            $item->mpn($data['sku']);
 			$item->link($data['link']);
 			$item->image_link($data['image']);
 

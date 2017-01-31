@@ -149,15 +149,23 @@ abstract class Rex_Product_Feed_Abstract_Generator {
 	protected function get_product_data( $id = false ){
 		$product = new WC_Product($id);
 
-		return array(
-			'id'       => $product->get_id(),
-			'title'    => $product->get_title(),
-			'desc'     => $product->get_post_data()->post_excerpt,
-			'link'     => $product->get_permalink(),
-			'image'    => wp_get_attachment_url( $product->get_image_id() ),
-			'stock'    => 'in stock',// $product->get_availability()['class'],
-			'price'    => $product->get_price(),
-			'currency' => get_woocommerce_currency(),
+        if ( $product->is_in_stock() == TRUE ) {
+            $availability = 'in stock';
+        } else {
+            $availability = 'out of stock';
+        }
+
+        return array(
+			'id'           => $product->get_id(),
+            'sku'          => $product->get_sku(),
+            'title'        => $product->get_title(),
+            'desc'         => $product->get_post_data()->post_excerpt,
+            'link'         => $product->get_permalink(),
+            'image'        => wp_get_attachment_url($product->get_image_id()),
+            'stock'        => 'in stock',// $product->get_availability()['class'],
+            'price'        => $product->get_price(),
+            'currency'     => get_woocommerce_currency(),
+            'availability' => $availability,
 		);
 	}
 
