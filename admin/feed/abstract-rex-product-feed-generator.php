@@ -162,7 +162,6 @@ abstract class Rex_Product_Feed_Abstract_Generator {
             'desc'         => $product->get_post_data()->post_excerpt,
             'link'         => $product->get_permalink(),
             'image'        => wp_get_attachment_url($product->get_image_id()),
-            'stock'        => 'in stock',// $product->get_availability()['class'],
             'price'        => $product->get_price(),
             'currency'     => get_woocommerce_currency(),
             'availability' => $availability,

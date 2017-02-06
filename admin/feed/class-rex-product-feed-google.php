@@ -41,6 +41,7 @@ class Rex_Product_Feed_Google extends Rex_Product_Feed_Abstract_Generator {
 			$item->availability($data['availability']);
 			$item->condition('new');
             $item->mpn($data['sku']);
+            $item->identifier_exists('no');
 			$item->link($data['link']);
 			$item->image_link($data['image']);
 

@@ -211,6 +211,17 @@ class Item
     }
 
     /**
+     * [$identifier_exists description]
+     * @param  [type] $identifier_exists [description]
+     * @return [type]       [description]
+     */
+    public function identifier_exists($identifier_exists)
+    {
+        $node = new Node('identifier_exists');
+        $this->nodes['identifier_exists'] = $node->value($identifier_exists)->_namespace($this->namespace)->addCdata();
+    }
+
+    /**
      * [product_type description]
      * @param  [type] $productType [description]
      * @return [type]              [description]
