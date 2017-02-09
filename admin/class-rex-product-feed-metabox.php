@@ -151,7 +151,6 @@ class Rex_Product_Metabox {
             'id'            => $this->prefix . 'file',
             'title'         => esc_html__( 'XML Feed', 'rex-product-feed' ),
             'object_types'  => array( 'product-feed' ), // Post type
-            'show_on_cb'    => array($this, 'feed_file_cb'),
             'context'       => 'side',
         ) );
 
@@ -172,23 +171,15 @@ class Rex_Product_Metabox {
     }
 
     public  function after_field_xml_file_cb($field_args, $field){
-        $url = esc_url( get_post_meta( $field->object_id, 'rex_feed_xml_file', true ) );
-        echo '<a target="_blank" class="button" href="' . $url . '">View Feed</a> ';
-        echo '<a target="_blank" class="button" href="' . $url . '" download>Download</a>';
+        $feed_url = get_post_meta( $field->object_id, $this->prefix . 'xml_file', true );
+        // Only show feed url not empty.
+        if ( strlen($feed_url) > 0 ){
+            $url = esc_url( get_post_meta( $field->object_id, 'rex_feed_xml_file', true ) );
+            echo '<a target="_blank" class="button" href="' . $url . '">View Feed</a> ';
+            echo '<a target="_blank" class="button" href="' . $url . '" download>Download</a>';
+        }
     }
 
-    /**
-     * Show Feed Metabox only if it has value.
-     * @param $cmb
-     * @param $field_args
-     * @param $field
-     * @return bool
-     */
-    public function feed_file_cb($cmb, $field_args, $field){
-        $feed_url = get_post_meta( $cmb->object_id(), $this->prefix . 'xml_file', true );
-        // Only show feed url not empty.
-        return strlen($feed_url) > 0 && $feed_url;
-    }
 
     /**
      * Update the XML File URL on Sanitization Hook.
