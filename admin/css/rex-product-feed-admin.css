@@ -2,3 +2,34 @@
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
+
+#config-table ul.dropdown-content.select-dropdown {
+  min-width: 300px;
+}
+
+#config-table .small-col {
+  width: 10%;
+}
+
+#config-table input {
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+#config-table .large-col {
+  width: 20%;
+}
+
+.form-table td {
+  padding: 0 10px;
+}
+
+#config-table .select-wrapper input.select-dropdown {
+  max-width: 90%;
+  text-overflow: ellipsis;
+}
+
+#config-table .dropdown-content li>a,
+#config-table .dropdown-content li>span{
+  font-size: 12px;
+}
