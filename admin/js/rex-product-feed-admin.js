@@ -29,6 +29,78 @@
      * practising this, we should strive to set a better example in our own work.
      */
 
+    /**
+    * Add a new table-row and update it's
+    */
+    $(document).on('click', '#rex-new-attr', function () {
+        var rowId = $('#config-table tbody tr').length;
+        $("#config-table tbody tr:first")
+            .clone()
+            .insertAfter('#config-table tbody tr:last')
+            .attr('data-row-id', rowId);
+
+        var $row = $('#config-table').find("[data-row-id='" + rowId + "']");
+
+        $row.find('input, select').val('');
+
+        updateFormNameAtts( $row, rowId);
+
+
+    });
+
+    /**
+     * Delete a table-row and update all row-id
+     * beneath it and their input attributes names.
+     */
+    $(document).on('click', '#config-table .delete', function () {
+        var $nextRows, rowId;
+
+        // delete row and get it's row-id
+        rowId = $(this).closest('tr').remove().data('row-id');
+
+        // Gell the next rows
+        if ( rowId == 0) {
+            $nextRows = $('#config-table tbody').children();
+        }else{
+            $nextRows = $('#config-table').find("[data-row-id='" + (rowId -1) + "']").nextAll('tr');
+        }
+
+        // Update their row-id and name attributes
+        $nextRows.each( function (index, el) {
+            $(el).attr( 'data-row-id', rowId);
+            updateFormNameAtts( $(el), rowId);
+            rowId++;
+        });
+    });
+
+    /**
+     * Function for updating select and input box name
+     * attribute under a table-row.
+     */
+    function updateFormNameAtts( $row, rowId){
+        var name, $el;
+        $el = $row.find('input, select');
+        $el.each(function(index, item) {
+            name = $(item).attr('name');
+            // get new name via regex
+            name = name.replace(/^fc\[\d+\]/, 'fc[' + rowId + ']');
+            $(item).attr('name', name);
+        });
+
+        return;
+    }
+
+    $(document).on('change', 'select.type-dropdown', function () {
+        var selected = $(this).find('option:selected').val();
+        if ( selected == 'static' ) {
+            $(this).closest('td').next('td').find('.meta-dropdown').hide();
+            $(this).closest('td').next('td').find('.static-input').show();
+        }else{
+            $(this).closest('td').next('td').find('.static-input').hide();
+            $(this).closest('td').next('td').find('.meta-dropdown').show();
+        }
+    });
+
     function get_checkbox_val( name ){
         var items = 'input[name="rex_feed_' + name + '[]"]';
         var vals = [];
