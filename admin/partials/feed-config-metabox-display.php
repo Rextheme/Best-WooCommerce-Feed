@@ -36,10 +36,20 @@
       <tr data-row-id="<?php echo $key; ?>">
         <td><?php $gt->printSelectDropdown( $key, 'attributes', $item['attr'] ); ?></td>
         <td><?php $gt->printAttType( $key, $item['type'] ); ?></td>
-        <td><?php $gt->printSelectDropdown( 'meta_keys', $item['attr'] ); ?></td>
+        <td>
+
+          <div class="meta-dropdown">
+            <?php $gt->printSelectDropdown( $key, 'meta_key', $item['meta_key'] ); ?>
+          </div>
+
+          <div class="static-input">
+            <?php $gt->printInput( $key, 'st_value', $item['st_value'] ); ?>
+          </div>
+
+        </td>
         <td><?php $gt->printInput( $key, 'prefix', $item['prefix'] ); ?></td>
         <td><?php $gt->printInput( $key, 'suffix', $item['suffix'] ); ?></td>
-        <td><?php $gt->printSelectDropdown( $key, 'sanitization_options', $item['escape'] ); ?></td>
+        <td><?php $gt->printSelectDropdown( $key, 'escape', $item['escape'] ); ?></td>
         <td><?php $gt->printInput( $key, 'limit', $item['limit'] ); ?></td>
         <td><a class="button delete">Delete</a></td>
       </tr>

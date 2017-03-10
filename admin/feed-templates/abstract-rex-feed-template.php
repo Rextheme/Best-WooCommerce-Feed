@@ -95,9 +95,9 @@ abstract class Rex_Feed_Abstract_Template {
 
     if ( $name === 'attributes' ) {
       $items = $this->attributes;
-    }elseif ( $name === 'meta_keys' ) {
+    }elseif ( $name === 'meta_key' ) {
       $items = $this->product_meta_keys;
-    }elseif ( $name === 'sanitization_options' ) {
+    }elseif ( $name === 'escape' ) {
       $items = $this->sanitization_options;
     }else{
       return;
@@ -134,7 +134,8 @@ abstract class Rex_Feed_Abstract_Template {
    */
   public function printAttType( $key, $selected = '' ){
     $options = array( 'meta' => 'Attribute', 'static' => 'Static');
-    echo "<select name='fc[$key][type][]'>";
+    echo "<select class='type-dropdown' name='fc[$key][type][]'>";
+    echo "<option value=''>Please Select</option>";
     foreach ($options as $key => $option) {
       $selected = $selected === $key ? "selected='selected'" : "";
       echo "<option value='$key' $selected>$option</option>";
