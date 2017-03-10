@@ -29,6 +29,10 @@
      * practising this, we should strive to set a better example in our own work.
      */
 
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+
     /**
     * Add a new table-row and update it's
     */
@@ -37,13 +41,16 @@
         $("#config-table tbody tr:first")
             .clone()
             .insertAfter('#config-table tbody tr:last')
-            .attr('data-row-id', rowId);
+            .attr('data-row-id', rowId)
+
 
         var $row = $('#config-table').find("[data-row-id='" + rowId + "']");
+        $row.find('ul.dropdown-content.select-dropdown, .caret, .select-dropdown ').remove();
 
         $row.find('input, select').val('');
 
         updateFormNameAtts( $row, rowId);
+        $row.find('select').material_select();
 
 
     });
@@ -86,8 +93,6 @@
             name = name.replace(/^fc\[\d+\]/, 'fc[' + rowId + ']');
             $(item).attr('name', name);
         });
-
-        return;
     }
 
     $(document).on('change', 'select.type-dropdown', function () {
