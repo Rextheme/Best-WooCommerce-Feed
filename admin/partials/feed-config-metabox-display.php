@@ -16,17 +16,16 @@
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
 
 <div id="rex-feed-config">
-  <table id="config-table">
+  <table id="config-table" class="responsive-table">
     <thead>
       <tr>
-        <th>Attributes</th>
-        <th>Type</th>
-        <th>Value</th>
-        <th>Prefix</th>
-        <th>Suffix</th>
-        <th>Output Sanitization</th>
-        <th>Output Limit</th>
-        <th></th>
+        <th class="large-col">Attributes</th>
+        <th class="large-col">Type</th>
+        <th class="large-col">Value</th>
+        <th class="small-col">Prefix</th>
+        <th class="small-col">Suffix</th>
+        <th class="small-col">Output Sanitization</th>
+        <th class="small-col">Output Limit</th>
       </tr>
     </thead>
 
@@ -51,13 +50,20 @@
         <td><?php $gt->printInput( $key, 'suffix', $item['suffix'] ); ?></td>
         <td><?php $gt->printSelectDropdown( $key, 'escape', $item['escape'] ); ?></td>
         <td><?php $gt->printInput( $key, 'limit', $item['limit'] ); ?></td>
-        <td><a class="button delete">Delete</a></td>
+        <td>
+          <a class="btn-floating waves-effect waves-light red delete">
+            <i class="material-icons">delete</i>
+          </a>
+        </td>
       </tr>
     <?php endforeach ?>
 
     </tbody>
 
   </table>
-  <a id="rex-new-attr" class="button">Add New Attribute</a>
+
+  <br>
+
+  <a id="rex-new-attr" class="waves-effect waves-light btn-large "><i class="material-icons left">add</i>Add New Attribute</a>
 
 </div>
