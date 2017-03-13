@@ -33,7 +33,7 @@
 
     <?php foreach ( $gt->getTemplateMappings() as $key => $item): ?>
       <tr data-row-id="<?php echo $key; ?>">
-        <td><?php $gt->printSelectDropdown( $key, 'attributes', $item['attr'] ); ?></td>
+        <td><?php $gt->printSelectDropdown( $key, 'attr', $item['attr'] ); ?></td>
         <td><?php $gt->printAttType( $key, $item['type'] ); ?></td>
         <td>
 

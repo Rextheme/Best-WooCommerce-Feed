@@ -93,7 +93,7 @@ abstract class Rex_Feed_Abstract_Template {
    */
   public function printSelectDropdown( $key, $name, $selected = '' ){
 
-    if ( $name === 'attributes' ) {
+    if ( $name === 'attr' ) {
       $items = $this->attributes;
     }elseif ( $name === 'meta_key' ) {
       $items = $this->product_meta_keys;
@@ -103,7 +103,7 @@ abstract class Rex_Feed_Abstract_Template {
       return;
     }
 
-    echo '<select  name="fc['.$key.'][' . esc_attr( $name ) . '][]" >';
+    echo '<select  name="fc['.$key.'][' . esc_attr( $name ) . ']" >';
       echo "<option value=''>Please Select</option>";
 
     foreach ($items as $groupLabel => $group) {
@@ -134,7 +134,7 @@ abstract class Rex_Feed_Abstract_Template {
    */
   public function printAttType( $key, $selected = '' ){
     $options = array( 'meta' => 'Attribute', 'static' => 'Static');
-    echo "<select class='type-dropdown' name='fc[$key][type][]'>";
+    echo "<select class='type-dropdown' name='fc[$key][type]'>";
     echo "<option value=''>Please Select</option>";
     foreach ($options as $key => $option) {
       $selected = $selected === $key ? "selected='selected'" : "";
@@ -149,7 +149,7 @@ abstract class Rex_Feed_Abstract_Template {
    * @since    1.0.0
    */
   public function printInput( $key, $name = '', $val = '' ){
-    echo '<input type="text" name="fc['.$key.'][' . esc_attr( $name ) . '][]" value="' . esc_attr( $val ) . '"">';
+    echo '<input type="text" name="fc['.$key.'][' . esc_attr( $name ) . ']" value="' . esc_attr( $val ) . '"">';
   }
 
   /**
